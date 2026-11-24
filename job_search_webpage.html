@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerConnect | Find Your Next Job</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    header {
+      background: #142b52;
+      color: white;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .logo { font-size: 25px; font-weight: bold; letter-spacing: .3px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+    nav a:hover { color: #8bd3ff; }
+    .hero {
+      background: linear-gradient(120deg, #1d4e89, #2677a8);
+      color: white;
+      text-align: center;
+      padding: 62px 20px 70px;
+    }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); margin-bottom: 12px; }
+    .hero p { color: #e5f2ff; margin-bottom: 26px; }
+    .search-bar {
+      background: white;
+      max-width: 760px;
+      margin: auto;
+      padding: 9px;
+      border-radius: 10px;
+      display: flex;
+      gap: 9px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.14);
+    }
+    .search-bar input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      padding: 12px;
+      font-size: 15px;
+    }
+    .search-bar button, .apply-btn {
+      border: 0;
+      background: #ff9f43;
+      color: #17243a;
+      font-weight: bold;
+      padding: 12px 22px;
+      border-radius: 7px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .search-bar button:hover, .apply-btn:hover { background: #ffc078; }
+    main { max-width: 1100px; margin: 42px auto; padding: 0 20px; }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .section-heading h2 { font-size: 27px; color: #142b52; }
+    .job-count { color: #64748b; font-size: 14px; }
+    .job-list { display: grid; gap: 18px; }
+    .job-card {
+      background: white;
+      border: 1px solid #e3eaf3;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(20,43,82,.05);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .job-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 9px 22px rgba(20,43,82,.1);
+    }
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .job-card h3 { color: #174a7e; font-size: 21px; margin-bottom: 4px; }
+    .company { font-weight: bold; color: #475569; }
+    .job-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 15px 0;
+      color: #64748b;
+      font-size: 14px;
+    }
+    .job-description { color: #475569; margin-bottom: 19px; }
+    .tag {
+      display: inline-block;
+      background: #eaf4ff;
+      color: #245b8f;
+      border-radius: 20px;
+      padding: 5px 11px;
+      font-size: 12px;
+      margin: 0 6px 8px 0;
+    }
+    .apply-btn { margin-top: 5px; }
+    footer {
+      text-align: center;
+      padding: 24px 15px;
+      color: #cbd5e1;
+      background: #142b52;
+      margin-top: 55px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      nav a { margin: 0 8px; }
+      .search-bar { flex-direction: column; }
+      .search-bar button { width: 100%; }
+      .job-card { padding: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">CareerConnect</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Find a Job You Love</h1>
+    <p>Explore opportunities, discover great companies, and take the next step in your career.</p>
+    <form class="search-bar" action="#jobs">
+      <input type="search" aria-label="Search jobs" placeholder="Job title or keyword">
+      <input type="text" aria-label="Location" placeholder="City or location">
+      <button type="submit">Search Jobs</button>
+    </form>
+  </section>
+
+  <main id="jobs">
+    <div class="section-heading">
+      <h2>Latest Job Openings</h2>
+      <span class="job-count">6 opportunities available</span>
+    </div>
+
+    <div class="job-list">
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>Junior Python Developer</h3><p class="company">TechNova Solutions</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20Junior%20Python%20Developer">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Hyderabad, India</span><span>💰 ₹3.5–5 LPA</span><span>🕒 Full-time</span></div>
+        <p class="job-description">Assist the development team in building and testing Python applications. Basic Python knowledge, problem-solving skills, and a willingness to learn are preferred.</p>
+        <span class="tag">Python</span><span class="tag">Beginner friendly</span><span class="tag">Software</span>
+      </article>
+
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>Frontend Developer</h3><p class="company">PixelCraft Digital</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20Frontend%20Developer">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Bengaluru, India</span><span>💰 ₹4–7 LPA</span><span>🕒 Full-time</span></div>
+        <p class="job-description">Create responsive and accessible web pages using HTML and CSS. Work with designers and developers to improve website layouts and user experience.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive design</span>
+      </article>
+
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>Data Analyst Intern</h3><p class="company">InsightWorks Analytics</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20Data%20Analyst%20Intern">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Remote, India</span><span>💰 ₹10,000–15,000/month</span><span>🕒 Internship</span></div>
+        <p class="job-description">Support the analytics team with data cleaning, simple reports, and spreadsheet analysis. Suitable for learners interested in data and logical thinking.</p>
+        <span class="tag">Excel</span><span class="tag">Data analysis</span><span class="tag">Internship</span>
+      </article>
+
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>UI/UX Design Trainee</h3><p class="company">BlueOrbit Studios</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20UI%2FUX%20Design%20Trainee">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Pune, India</span><span>💰 ₹2.8–4 LPA</span><span>🕒 Full-time</span></div>
+        <p class="job-description">Help create wireframes, prototypes, and clean interface designs. A creative mindset and familiarity with design tools are an advantage.</p>
+        <span class="tag">UI design</span><span class="tag">Figma</span><span class="tag">Creative</span>
+      </article>
+
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>Customer Support Associate</h3><p class="company">BrightPath Services</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20Customer%20Support%20Associate">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Vijayawada, India</span><span>💰 ₹2.2–3 LPA</span><span>🕒 Full-time</span></div>
+        <p class="job-description">Respond to customer questions, share clear information, and help resolve service issues. Good communication and basic computer skills are required.</p>
+        <span class="tag">Communication</span><span class="tag">Customer service</span>
+      </article>
+
+      <article class="job-card">
+        <div class="job-top">
+          <div><h3>AI/ML Project Intern</h3><p class="company">NextGen Intelligence</p></div>
+          <a class="apply-btn" href="mailto:careers@example.com?subject=Application%20-%20AI%2FML%20Project%20Intern">Apply Now</a>
+        </div>
+        <div class="job-details"><span>📍 Remote, India</span><span>💰 ₹8,000–12,000/month</span><span>🕒 Internship</span></div>
+        <p class="job-description">Learn with a project team and assist with beginner-level machine-learning tasks, data preparation, and project documentation.</p>
+        <span class="tag">Python</span><span class="tag">AI/ML</span><span class="tag">Internship</span>
+      </article>
+    </div>
+  </main>
+
+  <footer id="about">
+    <p id="contact">CareerConnect — Your next opportunity starts here. | Demo listings for practice only.</p>
+    <p>© 2026 CareerConnect. All rights reserved.</p>
+  </footer>
+</body>
+</html>
